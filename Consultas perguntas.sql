@@ -2,7 +2,10 @@
 USE language_school_ticoop_test;
 
 -- 1. Vanessa não sabe quais os alunos que mais gastam na escola.
-SELECT * FROM (
+SELECT 	expanses.id,
+	expanses.name,
+	SUM(expanses.total_price)
+   	FROM (
 	SELECT 	student.id,
 			student.name,
 			SUM(contract.total_price) total_price
